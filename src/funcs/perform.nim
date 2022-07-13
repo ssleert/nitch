@@ -1,7 +1,7 @@
 import std/terminal
 import ../assets/assets
 import ../assets/logos
-import ../nitches/[getUser, getHostname, getDistro, getKernel, getUptime, getShell]
+import ../nitches/[getUser, getHostname, getDistro, getKernel, getUptime, getShell, getPacmanPkgs, getRam]
 
 
 # if no flag
@@ -13,8 +13,8 @@ proc arg0*() =
     userKernel: string = getKernel()
     userUptime: string = getUptime()
     userShell: string = getShell()
-    userPkgs: string = "1245"
-    userRam: string = "1909 | 16384m"
+    userPkgs: string = getPacmanPkgs()
+    userRam: string = getRam()
 
   stdout.styledWrite(styleBright, fgRed, nitchLogo)
   stdout.styledWrite(styleBright, "  ╭───────────╮\n")
@@ -35,4 +35,3 @@ proc arg1*() =
 # -v --version flag
 proc arg2*() =
   stdout.styledWrite(styleBright, programVersion)
-  

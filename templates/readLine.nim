@@ -1,7 +1,7 @@
 import std/strutils
 import std/strformat
 
-proc getRam*(): string =
+proc readLine(): string =
   let
     fileSeq: seq[string] = readLines("/proc/meminfo", 3)
 
@@ -15,3 +15,5 @@ proc getRam*(): string =
     memUsedInt: int = memTotalInt - memAvailableInt
 
   return fmt"{memUsedInt} | {memTotalInt}mb"
+
+echo readLine()
