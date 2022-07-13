@@ -1,5 +1,4 @@
-import std/os
-import std/sequtils
+import std/[os, sequtils]
 
 proc getPacmanPkgs*(): string =
   let

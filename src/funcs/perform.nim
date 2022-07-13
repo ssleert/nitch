@@ -1,7 +1,9 @@
 import std/terminal
-import ../assets/assets
-import ../assets/logos
-import ../nitches/[getUser, getHostname, getDistro, getKernel, getUptime, getShell, getPacmanPkgs, getRam]
+import ../assets/[assets, logos]
+import ../nitches/[getUser, getHostname,
+                  getDistro, getKernel,
+                  getUptime, getShell,
+                  getPacmanPkgs, getRam]
 
 
 # if no flag

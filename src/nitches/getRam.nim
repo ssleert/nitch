@@ -1,5 +1,4 @@
-import std/strutils
-import std/strformat
+import std/[strutils, strformat]
 
 proc getRam*(): string =
   let

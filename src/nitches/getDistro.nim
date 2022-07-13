@@ -5,4 +5,4 @@ proc getDistro*(): string =
 
   close(osRelease)
 
-  return distroName[6 .. ^2]
+  return distroName[6..^2]

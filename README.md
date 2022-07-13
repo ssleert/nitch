@@ -5,7 +5,7 @@
 # `NiTch`
 
 <h3>
-  incredibly fast system fetch written in nim :crown:
+  incredibly fast system fetch written in <code>nim👑</code> :crown:
 </h3>
 <br>
 
@@ -22,13 +22,11 @@
 
 </div>
 
-<br>
-
-# Description
+# Description 📖
 
 <img src="https://media.discordapp.net/attachments/955362477137362954/996770839812911194/2022-07-13_16-31.png" width="350px" align="right">
 
-`nitch` is a small and incredibly fast system fetch written fully in nim without any dependencies, on my pc
+`nitch` is a small and incredibly fast system fetch written fully in `nim👑` without any dependencies, on my pc
 it executes in around 1.70 miliseconds.
 
 The source code of `nitch` is highly documented and I hope it will act as a learning resource for nim
@@ -36,7 +34,10 @@ and linux systems architecture
 
 If anything in the source code is unclear or is lacking in its explanation, open an issue. Sometimes you get too close to something and you fail to see the "bigger picture"!
 
-btw written in nim 👑
+
+btw written in `nim👑`
+
+why `nim👑`? because it's fast and simple
 
 <br>
 <br>
@@ -45,6 +46,8 @@ btw written in nim 👑
 
 # Install
 ### Loading 🚧
+
+<br>
 
 # Usage
 ```fish
