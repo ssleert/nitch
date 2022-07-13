@@ -30,8 +30,8 @@ proc arg0*() =
 
 # -h --help flag
 proc arg1*() =
-  stdout.styledWrite(styleBright, helpMsg)
+  stdout.styledWrite(helpMsg)
 
 # -v --version flag
 proc arg2*() =
-  stdout.styledWrite(styleBright, programVersion)
+  stdout.styledWrite(programVersion)
