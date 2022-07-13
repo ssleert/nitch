@@ -1,0 +1,32 @@
+│┌ ┐┘─┐  └│┘└ ┌─ ├ ┤ ┴ ┬
+│╭ ╮╯─╮  ╰│╯╰ ╭─ ├ ┤ ┴ ┬
+
+no flags
+or
+-f --fetch
+    _  ___ ______    __
+   / |/ (_)_  __/___/ /
+  /    / / / / / __/ _ \
+ /_/|_/_/ /_/  \__/_//_/
+
+  ╭───────────╮
+  │   user   │ ssleert
+  │   hname  │ sfome
+  │   distro │ Arch Linux
+  │   kernel │ 5.15.1
+  │   uptime │ 24h 46m
+  │   shell  │ fish
+  │   pkgs   │ 1241
+  │   memory │ 1605 | 16384m
+  ╰───────────╯
+
+
+-h --help
+nitch - incredibly fast system fetch written in nim
+
+ -f --fetch   | return fetch about system
+ -h --help    | return help message
+ -v --version | return version of program
+
+-v --version
+nitch - 0.1.0
