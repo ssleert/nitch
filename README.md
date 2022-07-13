@@ -5,7 +5,7 @@
 # `NiTch`
 
 <h3>
-  incredibly fast system fetch written in <code>nim👑</code> :crown:
+  incredibly fast system fetch written in <code>nim👑</code>
 </h3>
 <br>
 
