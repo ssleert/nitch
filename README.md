@@ -113,9 +113,9 @@ nitch
 <br>
 <br>
 
-# Thanks for code :speech_balloon 💬
+# Thanks for code 💬
 - [pfetch](https://github.com/dylanaraps/pfetch/)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [paleofetch](https://github.com/ss7m/paleofetch)
 - [rxfetch](https://github.com/Mangeshrex/rxfetch)
-- [nerdfetch](hhttps://github.com/ThatOneCalculator/NerdFetch)
+- [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch)
