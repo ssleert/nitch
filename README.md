@@ -42,7 +42,6 @@ why `nim👑`? because it's fast and simple
 <br>
 <br>
 <br>
-<br>
 
 # Install
 ### Loading 🚧

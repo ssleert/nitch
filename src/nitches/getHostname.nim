@@ -1,2 +1,2 @@
 proc getHostname*(): string =
-  return readFile("/etc/hostname")
+  result = readFile("/etc/hostname")

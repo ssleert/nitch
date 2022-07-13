@@ -5,4 +5,4 @@ proc getKernel*(): string =
     version: string = readAll(open("/proc/version"))
     kernelVersion: seq[string] = version.split(" ")
 
-  return kernelVersion[2]
+  result = kernelVersion[2]
