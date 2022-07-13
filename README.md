@@ -60,10 +60,14 @@ flags:
  -v --version | return version of program
 ```
 
+<br>
+
 # Configuration ⚙️
 `nitch` is configured through editing source code
 
 ### Loading 🚧
+
+<br>
 
 # File architecture 📁
 ```fish
