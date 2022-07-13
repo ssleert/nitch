@@ -42,14 +42,9 @@ btw written in nim 👑
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
 
 # Install
 ### Loading 🚧
-
-<br>
 
 # Usage
 ```fish
@@ -69,9 +64,6 @@ flags:
 `nitch` is configured through editing source code
 
 ### Loading 🚧
-
-<br>
-<br>
 
 # File architecture 📁
 ```fish
@@ -109,9 +101,6 @@ nitch
 
 6 directories, 24 files
 ```
-
-<br>
-<br>
 
 # Thanks for code 💬
 - [pfetch](https://github.com/dylanaraps/pfetch/)
