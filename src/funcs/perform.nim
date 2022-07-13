@@ -5,7 +5,6 @@ import ../nitches/[getUser, getHostname,
                   getUptime, getShell,
                   getPacmanPkgs, getRam]
 
-
 # if no flag
 proc arg0*() =
   let
