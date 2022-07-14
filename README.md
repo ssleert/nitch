@@ -42,12 +42,14 @@ why `nim👑`? because it's fast and simple
 <br>
 <br>
 
-# Install
-### Loading 🚧
+# Installation ☁️
+```fish
+curl https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh | sh
+```
 
 <br>
 
-# Usage
+# Usage 🪨
 ```
 nitch
 ```
