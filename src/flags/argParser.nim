@@ -1,6 +1,6 @@
 func argParser*(args: seq[string], argCount: int): int =
 
-  # list of args
+  # list of constant args
   const
     argsList: array[4, string] = [
     "-h", "--help",
@@ -9,15 +9,16 @@ func argParser*(args: seq[string], argCount: int): int =
 
   # if no flags
   if argCount == 0:
-    result = 0
+    result = 0  # return 0
 
   else:
+    # case first argument
     case args[0]:
 
-    # -h --help flag
+    # if -h --help flags
     of argsList[0 .. 1]:
-      result = 1
+      result = 1  # return 1
 
-    # -v --version flag
+    # if -v --version flags
     of argsList[2 .. 3]:
-      result = 2
+      result = 2  # return 2

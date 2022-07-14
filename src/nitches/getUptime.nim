@@ -7,4 +7,4 @@ proc getUptime*(): string =
 
     uptimeObject: string = $(int(uptimeHours * 100) / 100)
 
-  result = uptimeObject
+  result = uptimeObject & "h"
