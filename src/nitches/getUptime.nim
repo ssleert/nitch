@@ -5,4 +5,8 @@ proc getUptime*(): string =
     uptimeSeq: seq[string] = readFile("/proc/uptime").split(".")
     uptimeHours: string = $(parseInt(uptimeSeq[0]) / 3600)
 
-  result = uptimeHours & "h"
+  if len(uptimeHours) > 4:
+    result = uptimeHours[0 .. 4] & "h"
+
+  else:
+    result = uptimeHours & "h"
