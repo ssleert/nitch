@@ -39,7 +39,6 @@ btw written in `nim👑`
 why `nim👑`? because it's fast and simple
 
 <br>
-<br>
 
 # Installation ☁️
 ```fish
@@ -65,10 +64,10 @@ flags:
 <br>
 
 # Configuration ⚙️
-`nitch` is configured through editing source code
+### `nitch` is configured through editing source code
 
-./src/funcs/drawing.nim
-main conf file
+### **src/funcs/drawing.nim**
+### main conf file
 ```nim
 import std/terminal  # import standard terminal lib
 import ../assets/logos  # import logos from nitch/src/assets/logos
@@ -126,6 +125,24 @@ proc drawInfo*() =
   stdout.styledWrite(styleBright, "  │ ", fgYellow, ramIcon, fgDefault, ramCat, fgYellow, ramInfo, "\n")
   stdout.styledWrite(styleBright, "  ╰───────────╯\n\n")
 ```
+
+# Building 📦
+### 0) install [nim](https://nim-lang.org/)
+
+### 1) clone repo
+```fish
+git clone https://github.com/unxsh/nitch.git
+```
+### 2) change dir to `nitch`
+```fish
+cd nitch/
+```
+
+### 3) build program with `nimble`
+```fish
+nimble build
+```
+After that you will get a ready-made binary file in the root directory of the project.
 
 <br>
 <br>
