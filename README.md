@@ -11,7 +11,6 @@
 
 ![Maintenance](https://shields.io/maintenance/yes/2022?style=for-the-badge)
 ![License](https://shields.io/github/license/unxsh/nitch?style=for-the-badge)
-![CodeFactor](https://img.shields.io/codefactor/grade/github/unxsh/nitch?style=for-the-badge)
 ![Commits](https://shields.io/github/commit-activity/m/unxsh/nitch?style=for-the-badge)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/unxsh/nitch?style=for-the-badge)
