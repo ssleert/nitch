@@ -1,5 +1,5 @@
 const
-  programVersion*: string = "nitch - 0.1.3\n"
+  programVersion*: string = "nitch - 0.1.4\n"
   helpMsg*: string = """
 
  nitch - incredibly fast system fetch written in nim

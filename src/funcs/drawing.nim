@@ -12,14 +12,14 @@ proc drawInfo*() =
     distroId: string = getDistroId()
 
   const  # icons before cotegores
-    userIcon: string   = " "  # recomended: " "
-    hnameIcon: string  = " "  # recomended: " "
-    distroIcon: string = " "  # recomended: " "
-    kernelIcon: string = " "  # recomended: " "
-    uptimeIcon: string = " "  # recomended: " "
-    shellIcon: string  = " "  # recomended: " "
-    pkgsIcon: string   = " "  # recomended: " "
-    ramIcon: string    = " "  # recomended: " "
+    userIcon: string   = "->"  # recomended: " "
+    hnameIcon: string  = "->"  # recomended: " "
+    distroIcon: string = "->"  # recomended: " "
+    kernelIcon: string = "->"  # recomended: " "
+    uptimeIcon: string = "->"  # recomended: " "
+    shellIcon: string  = "->"  # recomended: " "
+    pkgsIcon: string   = "->"  # recomended: " "
+    ramIcon: string    = "->"  # recomended: " "
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 

@@ -1,5 +1,5 @@
-linkNerd="https://github.com/unxsh/nitch/releases/download/0.1.3/nitchNerd"
-linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.3/nitchNoNerd"
+linkNerd="https://github.com/unxsh/nitch/releases/download/0.1.4/nitchNerd"
+linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.4/nitchNoNerd"
 
 sudo rm -fv /usr/local/bin/nitch
 
