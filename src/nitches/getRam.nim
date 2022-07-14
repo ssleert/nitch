@@ -1,4 +1,4 @@
-import std/[strutils, strformat]
+import std/strutils
 
 proc getRam*(): string =
   let
@@ -13,4 +13,4 @@ proc getRam*(): string =
 
     memUsedInt: int = memTotalInt - memAvailableInt
 
-  result = fmt"{memUsedInt} | {memTotalInt}mb"
+  result = $(memUsedInt) & " | " & $(memTotalInt) & "mb"
