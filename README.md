@@ -72,21 +72,21 @@ flags:
 import std/terminal  # import standard terminal lib
 import ../assets/logos  # import logos from nitch/src/assets/logos
 import ../nitches/[getUser, getHostname,
-                  getDistro, getKernel,
-                  getUptime, getShell,
-                  getPkgs, getRam]  # import nitches to get info about user system
+                   getDistro, getKernel,
+                   getUptime, getShell,
+                   getPkgs, getRam]  # import nitches to get info about user system
 
 # the main function for drawing fetch
 proc drawInfo*() =
   const  # icons before cotegores
-    userIcon: string   = "► "  # recomended: " "
-    hnameIcon: string  = "► "  # recomended: " "
-    distroIcon: string = "► "  # recomended: " "
-    kernelIcon: string = "► "  # recomended: " "
-    uptimeIcon: string = "► "  # recomended: " "
-    shellIcon: string  = "► "  # recomended: " "
-    pkgsIcon: string   = "► "  # recomended: " "
-    ramIcon: string    = "► "  # recomended: " "
+    userIcon: string   = "->"  # recomended: " "
+    hnameIcon: string  = "->"  # recomended: " "
+    distroIcon: string = "->"  # recomended: " "
+    kernelIcon: string = "->"  # recomended: " "
+    uptimeIcon: string = "->"  # recomended: " "
+    shellIcon: string  = "->"  # recomended: " "
+    pkgsIcon: string   = "->"  # recomended: " "
+    ramIcon: string    = "->"  # recomended: " "
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 
