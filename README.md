@@ -49,14 +49,14 @@ why `nim👑`? because it's fast and simple
 <br>
 
 # Usage
-```fish
+```
 nitch
 ```
 
 <br>
 
 flags:
-```fish
+```
  -f --fetch   | return fetch about system
  -h --help    | return help message
  -v --version | return version of program
@@ -67,8 +67,67 @@ flags:
 # Configuration ⚙️
 `nitch` is configured through editing source code
 
-### Loading 🚧
+./src/funcs/drawing.nim
+main conf file
+```nim
+import std/terminal  # import standard terminal lib
+import ../assets/logos  # import logos from nitch/src/assets/logos
+import ../nitches/[getUser, getHostname,
+                  getDistro, getKernel,
+                  getUptime, getShell,
+                  getPkgs, getRam]  # import nitches to get info about user system
 
+# the main function for drawing fetch
+proc drawInfo*() =
+  const  # icons before cotegores
+    userIcon: string   = "► "  # recomended: " "
+    hnameIcon: string  = "► "  # recomended: " "
+    distroIcon: string = "► "  # recomended: " "
+    kernelIcon: string = "► "  # recomended: " "
+    uptimeIcon: string = "► "  # recomended: " "
+    shellIcon: string  = "► "  # recomended: " "
+    pkgsIcon: string   = "► "  # recomended: " "
+    ramIcon: string    = "► "  # recomended: " "
+    # please insert any char after the icon
+    # to avoid the bug with cropping the edge of the icon
+
+  const  # categories
+    userCat: string   = " user   │ "  # recomended: " user   │ "
+    hnameCat: string  = " hname  │ "  # recomended: " hname  │ "
+    distroCat: string = " distro │ "  # recomended: " distro │ "
+    kernelCat: string = " kernel │ "  # recomended: " kernel │ "
+    uptimeCat: string = " uptime │ "  # recomended: " uptime │ "
+    shellCat: string  = " shell  │ "  # recomended: " shell  │ "
+    pkgsCat: string   = " pkgs   │ "  # recomended: " pkgs   │ "
+    ramCat: string    = " memory │ "  # recomended: " memory │ "
+
+  let  # all info about system
+    defaultLogo: string  = nitchLogo      # default nitch logo from nitch/src/assets/logos
+    userUser: string     = getUser()      # get user through $USER env variable
+    userHostname: string = getHostname()  # get Hostname hostname through /etc/hostname
+    userDistro: string   = getDistro()    # get distro through /etc/os-release
+    userKernel: string   = getKernel()    # get kernel through /proc/version
+    userUptime: string   = getUptime()    # get Uptime through /proc/uptime file
+    userShell: string    = getShell()     # get shell through $SHELL env variable
+    userPkgs: string     = getPkgs()      # get amount of packages in distro
+    userRam: string      = getRam()       # get ram through /proc/meminfo
+
+
+  # colored out
+  stdout.styledWrite(styleBright, fgRed, defaultLogo)
+  stdout.styledWrite(styleBright, "  ╭───────────╮\n")
+  stdout.styledWrite(styleBright, "  │ ", fgGreen, userIcon, fgDefault, userCat, fgGreen, userUser, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgYellow, hnameIcon, fgDefault, hnameCat, fgYellow, userHostname, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgRed, distroIcon, fgDefault, distroCat, fgRed, userDistro, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgBlue, kernelIcon, fgDefault, kernelCat, fgBlue, userKernel, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgCyan, uptimeIcon, fgDefault, uptimeCat, fgCyan, userUptime, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgMagenta, shellIcon, fgDefault, shellCat, fgMagenta, userShell, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgGreen, pkgsIcon, fgDefault, pkgsCat, fgGreen, userPkgs, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgYellow, ramIcon, fgDefault, ramCat, fgYellow, userRam, "\n")
+  stdout.styledWrite(styleBright, "  ╰───────────╯\n\n")
+```
+
+<br>
 <br>
 
 # File architecture 📁
@@ -79,36 +138,43 @@ nitch
   ├── nitch.nimble
   ├── README.md
   ├── src
-  │   ├── assets
-  │   │   ├── assets.nim
-  │   │   └── logos.nim
-  │   ├── flags
-  │   │   └── argp.nim
-  │   ├── funcs
-  │   │   └── perform.nim
-  │   ├── nitches
-  │   │   ├── getDistro.nim
-  │   │   ├── getHostname.nim
-  │   │   ├── getKernel.nim
-  │   │   ├── getPacmanPkgs.nim
-  │   │   ├── getRam.nim
-  │   │   ├── getShell.nim
-  │   │   ├── getUptime.nim
-  │   │   └── getUser.nim
-  │   ├── nitch.nim
-  │   └── nitch.nim.cfg
+  │   ├── assets
+  │   │   ├── assets.nim
+  │   │   └── logos.nim
+  │   ├── flags
+  │   │   └── argParser.nim
+  │   ├── funcs
+  │   │   ├── drawing.nim
+  │   │   ├── packages
+  │   │   │   └── getPacmanPkgs.nim
+  │   │   └── perform.nim
+  │   ├── nitches
+  │   │   ├── getDistro.nim
+  │   │   ├── getHostname.nim
+  │   │   ├── getKernel.nim
+  │   │   ├── getPkgs.nim
+  │   │   ├── getRam.nim
+  │   │   ├── getShell.nim
+  │   │   ├── getUptime.nim
+  │   │   └── getUser.nim
+  │   ├── nitch.nim
+  │   └── nitch.nim.cfg
   └── templates
+      ├── cfgParser
+      ├── cfgParser.nim
       ├── data.dat
       ├── listFiles.nim
       ├── readLine.nim
       ├── refTest.nim
       ├── shellCheck.nim
-      └── testFile
+      ├── test.cfg
+      ├── testFile
+      └── testProc.nim
 
-6 directories, 24 files
+  7 directories, 30 files
 ```
 
-# Thanks for code 💬
+# Thanks for ideas & examples 💬
 - [pfetch](https://github.com/dylanaraps/pfetch/)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [paleofetch](https://github.com/ss7m/paleofetch)
