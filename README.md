@@ -40,7 +40,6 @@ why `nim👑`? because it's fast and simple
 
 <br>
 <br>
-<br>
 
 # Installation ☁️
 ```fish

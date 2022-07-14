@@ -11,6 +11,12 @@ proc getPkgs*(): string =
   of "arch":
     result = getPacmanPkgs()
 
+  of "archcraft":
+    result = getPacmanPkgs()
+
+  of "manjaro":
+    result = getPacmanPkgs()
+
   of "ubuntu":
     result = "<3"
 
