@@ -3,6 +3,8 @@ linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.3/nitchNoNerd"
 
 sudo rm -fv /usr/local/bin/nitch
 
+echo ""
+
 read -p "Use nerd font sumbols? (y/n):" symbolsYN
 case $symbolsYN in
   "y")
@@ -17,3 +19,5 @@ case $symbolsYN in
     sudo mv nitchNoNerd /usr/local/bin/nitch
   ;;
 esac
+
+echo ""

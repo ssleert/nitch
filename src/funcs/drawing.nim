@@ -1,5 +1,6 @@
 import std/terminal  # import standard terminal lib
 import ../assets/logos  # import logos from nitch/src/assets/logos
+import getDistroId
 import ../nitches/[getUser, getHostname,
                    getDistro, getKernel,
                    getUptime, getShell,
@@ -7,6 +8,9 @@ import ../nitches/[getUser, getHostname,
 
 # the main function for drawing fetch
 proc drawInfo*() =
+  let  # distro id (arch, manjaro, debian)
+    distroId: string = getDistroId()
+
   const  # icons before cotegores
     userIcon: string   = " "  # recomended: " "
     hnameIcon: string  = " "  # recomended: " "
@@ -30,15 +34,15 @@ proc drawInfo*() =
     ramCat: string    = " memory │ "  # recomended: " memory │ "
 
   let  # all info about system
-    defaultLogo: string  = nitchLogo      # default nitch logo from nitch/src/assets/logos
-    userInfo: string     = getUser()      # get user through $USER env variable
-    hostnameInfo: string = getHostname()  # get Hostname hostname through /etc/hostname
-    distroInfo: string   = getDistro()    # get distro through /etc/os-release
-    kernelInfo: string   = getKernel()    # get kernel through /proc/version
-    uptimeInfo: string   = getUptime()    # get Uptime through /proc/uptime file
-    shellInfo: string    = getShell()     # get shell through $SHELL env variable
-    pkgsInfo: string     = getPkgs()      # get amount of packages in distro
-    ramInfo: string      = getRam()       # get ram through /proc/meminfo
+    defaultLogo: string  = nitchLogo          # default nitch logo from nitch/src/assets/logos
+    userInfo: string     = getUser()          # get user through $USER env variable
+    hostnameInfo: string = getHostname()      # get Hostname hostname through /etc/hostname
+    distroInfo: string   = getDistro()        # get distro through /etc/os-release
+    kernelInfo: string   = getKernel()        # get kernel through /proc/version
+    uptimeInfo: string   = getUptime()        # get Uptime through /proc/uptime file
+    shellInfo: string    = getShell()         # get shell through $SHELL env variable
+    pkgsInfo: string     = getPkgs(distroId)  # get amount of packages in distro
+    ramInfo: string      = getRam()           # get ram through /proc/meminfo
 
 
   # colored out

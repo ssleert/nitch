@@ -1,13 +1,7 @@
-import std/parsecfg
 import ../funcs/packages/getPacmanPkgs
 
-proc getPkgs*(): string =
-  let
-    osRelease: Config = loadConfig("/etc/os-release")
-
-    sysId: string = osRelease.getSectionValue("", "ID")
-
-  case sysId:
+proc getPkgs*(distroId: string): string =
+  case distroId:
   of "arch":
     result = getPacmanPkgs()
 
