@@ -1,2 +1,3 @@
-sudo curl "https://objects.githubusercontent.com/github-production-release-asset-2e65be/511540716/11bc78fd-14c0-4c66-9f99-0282951fe7dd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220714%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220714T210451Z&X-Amz-Expires=300&X-Amz-Signature=1bca7d35e2bbeff4f8dca323943fa40c6090e730e41a88d4cb304b8890ad6a8a&X-Amz-SignedHeaders=host&actor_id=68077937&key_id=0&repo_id=511540716&response-content-disposition=attachment%3B%20filename%3Dnitch&response-content-type=application%2Foctet-stream" --output /usr/local/bin/nitch
-sudo chmod +x /usr/local/bin/nitch
+wget "https://github.com/unxsh/nitch/releases/download/0.1.2/nitch"
+chmod +x nitch
+sudo mv nitch /usr/local/bin
