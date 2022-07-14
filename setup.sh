@@ -1,3 +1,19 @@
-wget "https://github.com/unxsh/nitch/releases/download/0.1.3/nitch"
-chmod +x nitch
-sudo mv nitch /usr/local/bin
+linkNerd="https://github.com/unxsh/nitch/releases/download/0.1.3/nitchNerd"
+linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.3/nitchNoNerd"
+
+sudo rm -fv /usr/local/bin/nitch
+
+read -p "Use nerd font sumbols? (y/n):" symbolsYN
+case $symbolsYN in
+  "y")
+    wget $linkNerd
+    chmod +x nitchNerd
+    sudo mv nitchNerd /usr/local/bin/nitch
+  ;;
+
+  "n")
+    wget $linkNoNerd
+    chmod +x nitchNoNerd
+    sudo mv nitchNoNerd /usr/local/bin/nitch
+  ;;
+esac
