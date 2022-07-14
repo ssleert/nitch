@@ -3,6 +3,6 @@ proc getDistro*(): string =
     osRelease: File = open("/etc/os-release", fmRead)
     distroName: string = readLine(osRelease)
 
-  close(osRelease)
+  osRelease.close()
 
   result = distroName[6..^2]

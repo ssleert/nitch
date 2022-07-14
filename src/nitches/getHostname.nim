@@ -1,2 +1,8 @@
 proc getHostname*(): string =
-  result = readFile("/etc/hostname")
+  let
+    hostNameFile: File = open("/etc/hostname")
+    hostName: string = readLine(hostNameFile)
+
+  hostNameFile.close()
+
+  result = hostName

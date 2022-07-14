@@ -20,7 +20,7 @@ proc arg0*() =
   stdout.styledWrite(styleBright, fgRed, nitchLogo)
   stdout.styledWrite(styleBright, "  ╭───────────╮\n")
   stdout.styledWrite(styleBright, "  │ ", fgGreen, " ", fgDefault, " user   │ ", fgGreen, userUser, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgYellow, " ", fgDefault, " hname  │ ", fgYellow, userHostname)
+  stdout.styledWrite(styleBright, "  │ ", fgYellow, " ", fgDefault, " hname  │ ", fgYellow, userHostname, "\n")
   stdout.styledWrite(styleBright, "  │ ", fgRed, " ", fgDefault, " distro │ ", fgRed, userDistro, "\n")
   stdout.styledWrite(styleBright, "  │ ", fgBlue, " ", fgDefault, " kernel │ ", fgBlue, userKernel, "\n")
   stdout.styledWrite(styleBright, "  │ ", fgCyan, " ", fgDefault, " uptime │ ", fgCyan, userUptime, "h", "\n")
