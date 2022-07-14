@@ -1,9 +1,9 @@
 import std/terminal  # import standard terminal lib
 import ../assets/logos  # import logos from nitch/src/assets/logos
 import ../nitches/[getUser, getHostname,
-                  getDistro, getKernel,
-                  getUptime, getShell,
-                  getPkgs, getRam]  # import nitches to get info about user system
+                   getDistro, getKernel,
+                   getUptime, getShell,
+                   getPkgs, getRam]  # import nitches to get info about user system
 
 # the main function for drawing fetch
 proc drawInfo*() =

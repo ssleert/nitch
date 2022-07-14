@@ -103,27 +103,27 @@ proc drawInfo*() =
 
   let  # all info about system
     defaultLogo: string  = nitchLogo      # default nitch logo from nitch/src/assets/logos
-    userUser: string     = getUser()      # get user through $USER env variable
-    userHostname: string = getHostname()  # get Hostname hostname through /etc/hostname
-    userDistro: string   = getDistro()    # get distro through /etc/os-release
-    userKernel: string   = getKernel()    # get kernel through /proc/version
-    userUptime: string   = getUptime()    # get Uptime through /proc/uptime file
-    userShell: string    = getShell()     # get shell through $SHELL env variable
-    userPkgs: string     = getPkgs()      # get amount of packages in distro
-    userRam: string      = getRam()       # get ram through /proc/meminfo
+    userInfo: string     = getUser()      # get user through $USER env variable
+    hostnameInfo: string = getHostname()  # get Hostname hostname through /etc/hostname
+    distroInfo: string   = getDistro()    # get distro through /etc/os-release
+    kernelInfo: string   = getKernel()    # get kernel through /proc/version
+    uptimeInfo: string   = getUptime()    # get Uptime through /proc/uptime file
+    shellInfo: string    = getShell()     # get shell through $SHELL env variable
+    pkgsInfo: string     = getPkgs()      # get amount of packages in distro
+    ramInfo: string      = getRam()       # get ram through /proc/meminfo
 
 
   # colored out
   stdout.styledWrite(styleBright, fgRed, defaultLogo)
   stdout.styledWrite(styleBright, "  ╭───────────╮\n")
-  stdout.styledWrite(styleBright, "  │ ", fgGreen, userIcon, fgDefault, userCat, fgGreen, userUser, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgYellow, hnameIcon, fgDefault, hnameCat, fgYellow, userHostname, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgRed, distroIcon, fgDefault, distroCat, fgRed, userDistro, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgBlue, kernelIcon, fgDefault, kernelCat, fgBlue, userKernel, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgCyan, uptimeIcon, fgDefault, uptimeCat, fgCyan, userUptime, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgMagenta, shellIcon, fgDefault, shellCat, fgMagenta, userShell, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgGreen, pkgsIcon, fgDefault, pkgsCat, fgGreen, userPkgs, "\n")
-  stdout.styledWrite(styleBright, "  │ ", fgYellow, ramIcon, fgDefault, ramCat, fgYellow, userRam, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgGreen, userIcon, fgDefault, userCat, fgGreen, userInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgYellow, hnameIcon, fgDefault, hnameCat, fgYellow, hostnameInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgRed, distroIcon, fgDefault, distroCat, fgRed, distroInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgBlue, kernelIcon, fgDefault, kernelCat, fgBlue, kernelInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgCyan, uptimeIcon, fgDefault, uptimeCat, fgCyan, uptimeInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgMagenta, shellIcon, fgDefault, shellCat, fgMagenta, shellInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgGreen, pkgsIcon, fgDefault, pkgsCat, fgGreen, pkgsInfo, "\n")
+  stdout.styledWrite(styleBright, "  │ ", fgYellow, ramIcon, fgDefault, ramCat, fgYellow, ramInfo, "\n")
   stdout.styledWrite(styleBright, "  ╰───────────╯\n\n")
 ```
 
