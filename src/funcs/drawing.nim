@@ -3,19 +3,19 @@ import ../assets/logos  # import logos from nitch/src/assets/logos
 import ../nitches/[getUser, getHostname,
                   getDistro, getKernel,
                   getUptime, getShell,
-                  getPacmanPkgs, getRam]  # import nitches to get info about user system
+                  getPkgs, getRam]  # import nitches to get info about user system
 
 # the main function for drawing fetch
 proc drawInfo*() =
   const  # icons
-    userIcon: string = " "    # default: 
-    hnameIcon: string = " "   # default: 
-    distroIcon: string = " "  # default: 
-    kernelIcon: string = " "  # default: 
-    uptimeIcon: string = " "  # default: 
-    shellIcon: string = " "   # default: 
-    pkgsIcon: string = " "    # default: 
-    ramIcon: string = " "     # default: 
+    userIcon: string = "► "    # recomended: 
+    hnameIcon: string = "► "   # recomended: 
+    distroIcon: string = "► "  # recomended: 
+    kernelIcon: string = "► "  # recomended: 
+    uptimeIcon: string = "► "  # recomended: 
+    shellIcon: string = "► "   # recomended: 
+    pkgsIcon: string = "► "    # recomended: 
+    ramIcon: string = "► "     # recomended: 
     # please insert space after the icon
     # to avoid the bug with cropping the edge of the icon
 
@@ -28,7 +28,7 @@ proc drawInfo*() =
     userKernel: string = getKernel()      # get kernel through /proc/version
     userUptime: string = getUptime()      # get Uptime through /proc/uptime file
     userShell: string = getShell()        # get shell through $SHELL env variable
-    userPkgs: string = getPacmanPkgs()    # get pacman packages through /var/lib/pacman/local
+    userPkgs: string = getPkgs()          # get amount of packages in distro
     userRam: string = getRam()            # get ram through /proc/meminfo
 
 
