@@ -1,3 +1,5 @@
+#!/bin/sh
+
 linkNerd="https://github.com/unxsh/nitch/releases/download/0.1.4/nitchNerd"
 linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.4/nitchNoNerd"
 
