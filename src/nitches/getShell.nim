@@ -1,4 +1,4 @@
 import std/os
 
-proc getShell*(): string =
+func getShell*(): string =
   result = getEnv("SHELL")

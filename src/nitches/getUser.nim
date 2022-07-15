@@ -1,4 +1,4 @@
 import std/os
 
-proc getUser*(): string =
+func getUser*(): string =
   result = getEnv("USER")
