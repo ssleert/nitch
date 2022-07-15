@@ -12,10 +12,10 @@ proc getPkgs*(distroId: string): string =
     result = getPacmanPkgs()
 
   of "ubuntu":
-    result = "<3"
+    result = ">3"
 
   of "debian":
-    result = "<3"
+    result = ">3"
 
   else:
-    result = "<3"
+    result = ">3"
