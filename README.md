@@ -45,14 +45,10 @@ why `nim👑`? because it's fast and simple
 wget https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh && sh setup.sh
 ```
 
-<br>
-
 # Usage 🪨
 ```
 nitch
 ```
-
-<br>
 
 flags:
 ```

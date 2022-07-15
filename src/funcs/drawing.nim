@@ -4,16 +4,17 @@ import getDistroId
 import ../nitches/[getUser, getHostname,
                    getDistro, getKernel,
                    getUptime, getShell,
-                   getPkgs, getRam, getLogo]  # import nitches to get info about user system
+                   getPkgs, getRam,
+                   getLogo, getLogoColor]  # import nitches to get info about user system
 
 # the main function for drawing fetch
 proc drawInfo*() =
   let  # distro id (arch, manjaro, debian)
     distroId: string = getDistroId()
 
-  let
-    logoColor: ForegroundColor = fgRed  # color for logo
-    defaultLogo: string  = getLogo(distroId)    # default logo from nitch/src/assets/logos
+  let  # logo and it color
+    logoColor: ForegroundColor = getLogoColor(distroId)  # color for logo
+    defaultLogo: string  = getLogo(distroId)             # default logo from nitch/src/assets/logos
 
 
   const  # icons before cotegores

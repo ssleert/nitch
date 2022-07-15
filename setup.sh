@@ -7,7 +7,9 @@ sudo rm -fv /usr/local/bin/nitch
 
 echo ""
 
-read -p "Use nerd font sumbols? (y/n):" symbolsYN
+read -p "Use nerd font sumbols? (y/n): " symbolsYN
+echo "Installation..."
+
 case $symbolsYN in
   "y")
     wget $linkNerd
