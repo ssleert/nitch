@@ -23,7 +23,7 @@
 
 # Description 📖
 
-<img src="https://media.discordapp.net/attachments/955362477137362954/996770839812911194/2022-07-13_16-31.png" width="350px" align="right">
+<img src="https://media.discordapp.net/attachments/955362477137362954/996770839812911194/2022-07-13_16-31.png" width="50%" align="right">
 
 `nitch` is a small and incredibly fast system fetch written fully in `nim👑` without any dependencies, on my pc
 it executes in around 1.70 miliseconds.

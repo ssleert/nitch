@@ -11,15 +11,20 @@ proc drawInfo*() =
   let  # distro id (arch, manjaro, debian)
     distroId: string = getDistroId()
 
+  const
+    logoColor: ForegroundColor = fgRed  # color for logo
+    defaultLogo: string  = nitchLogo    # default logo from nitch/src/assets/logos
+
+
   const  # icons before cotegores
-    userIcon: string   = "->"  # recomended: " "
-    hnameIcon: string  = "->"  # recomended: " "
-    distroIcon: string = "->"  # recomended: " "
-    kernelIcon: string = "->"  # recomended: " "
-    uptimeIcon: string = "->"  # recomended: " "
-    shellIcon: string  = "->"  # recomended: " "
-    pkgsIcon: string   = "->"  # recomended: " "
-    ramIcon: string    = "->"  # recomended: " "
+    userIcon: string   = " "  # recomended: " "
+    hnameIcon: string  = " "  # recomended: " "
+    distroIcon: string = " "  # recomended: " "
+    kernelIcon: string = " "  # recomended: " "
+    uptimeIcon: string = " "  # recomended: " "
+    shellIcon: string  = " "  # recomended: " "
+    pkgsIcon: string   = " "  # recomended: " "
+    ramIcon: string    = " "  # recomended: " "
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 
@@ -34,7 +39,6 @@ proc drawInfo*() =
     ramCat: string    = " memory │ "  # recomended: " memory │ "
 
   let  # all info about system
-    defaultLogo: string  = nitchLogo          # default nitch logo from nitch/src/assets/logos
     userInfo: string     = getUser()          # get user through $USER env variable
     hostnameInfo: string = getHostname()      # get Hostname hostname through /etc/hostname
     distroInfo: string   = getDistro()        # get distro through /etc/os-release
@@ -46,7 +50,7 @@ proc drawInfo*() =
 
 
   # colored out
-  stdout.styledWrite(styleBright, fgRed, defaultLogo)
+  stdout.styledWrite(styleBright, logoColor, defaultLogo)
   stdout.styledWrite(styleBright, "  ╭───────────╮\n")
   stdout.styledWrite(styleBright, "  │ ", fgGreen, userIcon, fgDefault, userCat, fgGreen, userInfo, "\n")
   stdout.styledWrite(styleBright, "  │ ", fgYellow, hnameIcon, fgDefault, hnameCat, fgYellow, hostnameInfo, "\n")
