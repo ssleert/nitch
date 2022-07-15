@@ -18,19 +18,19 @@ proc drawInfo*() =
 
 
   const  # icons before cotegores
-    userIcon: string   = " "  # recomended: " "
-    hnameIcon: string  = " "  # recomended: " "
-    distroIcon: string = " "  # recomended: " "
-    kernelIcon: string = " "  # recomended: " "
-    uptimeIcon: string = " "  # recomended: " "
-    shellIcon: string  = " "  # recomended: " "
-    pkgsIcon: string   = " "  # recomended: " "
-    ramIcon: string    = " "  # recomended: " "
-    colorsIcon: string = " "  # recomended: " "
+    userIcon: string   = " "  # recomended: " " or "|>"
+    hnameIcon: string  = " "  # recomended: " " or "|>"
+    distroIcon: string = " "  # recomended: " " or "|>"
+    kernelIcon: string = " "  # recomended: " " or "|>"
+    uptimeIcon: string = " "  # recomended: " " or "|>"
+    shellIcon: string  = " "  # recomended: " " or "|>"
+    pkgsIcon: string   = " "  # recomended: " " or "|>"
+    ramIcon: string    = " "  # recomended: " " or "|>"
+    colorsIcon: string = " "  # recomended: " " or "->"
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 
-    dotIcon: string = ""  # recomended: ""
+    dotIcon: string = ""  # recomended: "" or "■"
     # icon for demonstrate colors
 
 
