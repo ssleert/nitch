@@ -7,4 +7,4 @@ proc getUptime*(): string =
 
     uptimeHoursSeq: seq[string] = uptimeHours.split(".")
 
-  result = uptimeHoursSeq[0] & "." & uptimeHoursSeq[1][0 .. 1] & "h"
+  result = uptimeHoursSeq[0] & "h:" & uptimeHoursSeq[1][0 .. 1] & "m"
