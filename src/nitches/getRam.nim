@@ -13,4 +13,4 @@ proc getRam*(): string =
 
     memUsedInt: int = memTotalInt - memAvailableInt
 
-  result = $(memUsedInt) & " | " & $(memTotalInt) & "mb"
+  result = $(memUsedInt) & " | " & $(memTotalInt) & " MiB"

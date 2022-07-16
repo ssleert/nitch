@@ -11,5 +11,35 @@ func getLogo*(distroId: string): string =
   of "debian":
     result = debianLogo
 
+  of "fedora":
+    result = fedoraLogo
+
+  of "linuxmint":
+    result = mintLogo
+
+  of "Zorin OS":
+    result = zorinLogo
+
+  of "pop":
+    result = poposLogo
+
+  of "manjaro":
+    result = manjaroLogo
+
+  of "opensuse":
+    result = opensuseLogo
+
+  of "slackware":
+    result = slackwareLogo
+
+  of "centos":
+    result = centosLogo
+
+  of "redhat":
+    result = redhatLogo
+
+  of "gentoo":
+    result = gentooLogo
+
   else:
     result = nitchLogo

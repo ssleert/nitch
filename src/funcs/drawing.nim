@@ -1,6 +1,6 @@
 import std/terminal       # import standard terminal lib
 import getDistroId        # import to get distro id through /etc/os-release
-# import ../assets/logos  # uncomment if you use your own logo
+#import ../assets/logos   # uncomment if you use your own logo
 import ../nitches/[getUser, getHostname,
                    getDistro, getKernel,
                    getUptime, getShell,
