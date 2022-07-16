@@ -1,6 +1,6 @@
 import std/terminal       # import standard terminal lib
 import getDistroId        # import to get distro id through /etc/os-release
-# import ../assets/logos  #
+# import ../assets/logos  # uncomment if you use your own logo
 import ../nitches/[getUser, getHostname,
                    getDistro, getKernel,
                    getUptime, getShell,
@@ -15,7 +15,6 @@ proc drawInfo*() =
   let  # logo and it color
     logoColor: ForegroundColor = getLogoColor(distroId)  # color for logo
     defaultLogo: string  = getLogo(distroId)             # default logo from nitch/src/assets/logos
-
 
   const  # icons before cotegores
     userIcon: string   = " "  # recomended: " " or "|>"
