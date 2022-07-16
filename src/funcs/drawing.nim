@@ -1,6 +1,6 @@
-import std/terminal  # import standard terminal lib
-import getDistroId  # import to get distro id through /etc/os-release
-# import ../assets/logos
+import std/terminal       # import standard terminal lib
+import getDistroId        # import to get distro id through /etc/os-release
+# import ../assets/logos  #
 import ../nitches/[getUser, getHostname,
                    getDistro, getKernel,
                    getUptime, getShell,
@@ -32,7 +32,6 @@ proc drawInfo*() =
 
     dotIcon: string = ""  # recomended: "" or "■"
     # icon for demonstrate colors
-
 
   const  # categories
     userCat: string   = " user   │ "  # recomended: " user   │ "
