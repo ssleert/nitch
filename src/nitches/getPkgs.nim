@@ -1,4 +1,5 @@
 import ../funcs/packages/getPacmanPkgs
+import ../funcs/packages/getFedoraPkgs
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -10,6 +11,9 @@ proc getPkgs*(distroId: string): string =
 
   of "manjaro":
     result = getPacmanPkgs()
+
+  of "fedora":
+    result = getFedoraPkgs()
 
   of "ubuntu":
     result = ">3"
