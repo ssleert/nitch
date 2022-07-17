@@ -12,13 +12,13 @@ echo "Installation..."
 
 case $symbolsYN in
   "y")
-    wget $linkNerd
+    curl -O $linkNerd
     chmod +x nitchNerd
     sudo mv nitchNerd /usr/local/bin/nitch
   ;;
 
   "n")
-    wget $linkNoNerd
+    curl -O $linkNoNerd
     chmod +x nitchNoNerd
     sudo mv nitchNoNerd /usr/local/bin/nitch
   ;;
