@@ -1,7 +1,7 @@
-import std/osproc
+import std/[strutils, osproc]
 
 proc getRpmPkgs*(): string =
   let
-    count: string = osproc.execCmdEx("rpm -qa | wc -l")[0]
+    count: string = osproc.execCmdEx("rpm -qa")[0]
 
-  result = count[0 .. ^3]
+  result = $(count.split("\n").len - 1)
