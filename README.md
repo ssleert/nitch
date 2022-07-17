@@ -33,7 +33,6 @@ and linux systems architecture
 
 If anything in the source code is unclear or is lacking in its explanation, open an issue. Sometimes you get too close to something and you fail to see the "bigger picture"!
 
-
 btw written in `nim👑`
 
 why `nim👑`? because it's fast and simple
@@ -41,16 +40,19 @@ why `nim👑`? because it's fast and simple
 <br>
 
 # Installation ☁️
+
 ```fish
-wget https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh && sh setup.sh
+curl -fsSL https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh | sh
 ```
 
 # Usage 🪨
+
 ```
 nitch
 ```
 
 flags:
+
 ```
  -f --fetch   | return fetch about system
  -h --help    | return help message
@@ -60,10 +62,13 @@ flags:
 <br>
 
 # Configuration ⚙️
+
 ### `nitch` is configured through editing source code
 
 ### **src/funcs/drawing.nim**
+
 ### main conf file
+
 ```nim
 import std/terminal  # import standard terminal lib
 import ../assets/logos  # import logos from nitch/src/assets/logos
@@ -123,27 +128,34 @@ proc drawInfo*() =
 ```
 
 # Building 📦
+
 ### 0) install [nim](https://nim-lang.org/)
 
 ### 1) clone repo
+
 ```fish
 git clone https://github.com/unxsh/nitch.git
 ```
+
 ### 2) change dir to `nitch`
+
 ```fish
 cd nitch/
 ```
 
 ### 3) build program with `nimble`
+
 ```fish
 nimble build
 ```
+
 After that you will get a ready-made binary file in the root directory of the project.
 
 <br>
 <br>
 
 # File architecture 📁
+
 ```fish
 nitch
   ├── LICENSE
@@ -188,6 +200,7 @@ nitch
 ```
 
 # Thanks for ideas & examples 💬
+
 - [pfetch](https://github.com/dylanaraps/pfetch/)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [paleofetch](https://github.com/ss7m/paleofetch)
