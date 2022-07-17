@@ -36,7 +36,7 @@ proc drawInfo*() =
     userCat: string   = " user   │ "  # recomended: " user   │ "
     hnameCat: string  = " hname  │ "  # recomended: " hname  │ "
     distroCat: string = " distro │ "  # recomended: " distro │ "
-    kernelCat: string = " kernel │ "  # recomended: " kernel │ "
+    kernelCat: string = " kernel │ "  # recomended: " kernel │ "-
     uptimeCat: string = " uptime │ "  # recomended: " uptime │ "
     shellCat: string  = " shell  │ "  # recomended: " shell  │ "
     pkgsCat: string   = " pkgs   │ "  # recomended: " pkgs   │ "
@@ -63,7 +63,6 @@ proc drawInfo*() =
     color7: ForegroundColor = fgWhite
     color8: ForegroundColor = fgBlack
     color0: ForegroundColor = fgDefault
-
 
   # colored out
   stdout.styledWrite(styleBright, logoColor, defaultLogo)

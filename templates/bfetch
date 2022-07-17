@@ -1,0 +1,40 @@
+#!/bin/bash
+
+RESTORE=$(echo -en '\033[0m')
+RED=$(echo -en '\033[00;31m')
+GREEN=$(echo -en '\033[00;32m')
+YELLOW=$(echo -en '\033[00;33m')
+BLUE=$(echo -en '\033[00;34m')
+MAGENTA=$(echo -en '\033[00;35m')
+PURPLE=$(echo -en '\033[00;35m')
+CYAN=$(echo -en '\033[00;36m')
+LIGHTGRAY=$(echo -en '\033[00;37m')
+LRED=$(echo -en '\033[01;31m')
+LGREEN=$(echo -en '\033[01;32m')
+LYELLOW=$(echo -en '\033[01;33m')
+LBLUE=$(echo -en '\033[01;34m')
+LMAGENTA=$(echo -en '\033[01;35m')
+LPURPLE=$(echo -en '\033[01;35m')
+LCYAN=$(echo -en '\033[01;36m')
+WHITE=$(echo -en '\033[01;37m')
+ORANGE=$(echo -en '\033[01;33m')
+DARK=$(echo -en '\033[01;30m')
+
+OS=`cat /etc/os-release | grep PRETTY_NAME | sed 's/\"//g' | sed 's/.*=//g'`
+KERNEL=`uname -r`
+RAM=$(echo "$((`cat /proc/meminfo | grep MemTotal | awk '{print $2}'`/1024))")
+RAM_USED=$(echo $((`cat /proc/meminfo | grep MemAvailable | awk '{print $2}'`/1024)))
+RAM_USED=$(echo $((RAM-RAM_USED)))
+UPTIME=`echo $(uptime | awk '{print $3}' | sed 's/,//g' | sed 's/\:/h /g')m`
+HOSTNAME=`cat /etc/hostname`
+USERNAME=`whoami`
+
+echo ""
+echo -e "${BLUE}┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+echo -e "${BLUE}┃${RESTORE}   .${ORANGE}~${RESTORE}.   ${BLUE}┃  ${BLUE}$HOSTNAME${RESTORE}@${BLUE}$USERNAME""\t\t"${BLUE}┃
+echo -e "${BLUE}┃${RESTORE}   ${DARK}/${ORANGE}V${RESTORE}${DARK}\   ${BLUE}┃  ${PURPLE}os${RESTORE}\t\t$OS""\t"${BLUE}┃
+echo -e "${BLUE}┃${RESTORE}  ${DARK}/${WHITE}/ \\\\${DARK}\  ${BLUE}┃  ${PURPLE}uptime${RESTORE}\t$UPTIME""\t\t"${BLUE}┃
+echo -e "${BLUE}┃${RESTORE} ${DARK}/${WHITE}(   )${DARK}\ ${BLUE}┃  ${PURPLE}kernel${RESTORE}\t$KERNEL""\t"${BLUE}┃
+echo -e "${BLUE}┃${RESTORE}  ${DARK}^${WHITE}\`${ORANGE}~${WHITE}'${DARK}^  ${BLUE}┃  ${PURPLE}ram${RESTORE}\t""$RAM_USED"M / "$RAM"M"\t"${BLUE}┃
+echo -e "${BLUE}┗━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+echo ""
