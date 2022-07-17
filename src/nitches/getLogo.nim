@@ -1,45 +1,64 @@
+import std/terminal
 import ../assets/logos
 
-func getLogo*(distroId: string): string =
+func getLogo*(distroId: string): tuple =
+  const
+    coloredLogos: array[14, tuple] = [
+      (fgRed, nitchLogo),
+      (fgBlue, archLogo),
+      (fgRed, ubuntuLogo),
+      (fgRed, debianLogo),
+      (fgBlue, fedoraLogo),
+      (fgGreen, mintLogo),
+      (fgBlue, zorinLogo),
+      (fgCyan, poposLogo),
+      (fgGreen, manjaroLogo),
+      (fgGreen, opensuseLogo),
+      (fgBlue, slackwareLogo),
+      (fgYellow, centosLogo),
+      (fgRed, redhatLogo),
+      (fgMagenta, gentooLogo)
+    ]
+
   case distroId:
   of "arch":
-    result = archLogo
+    result = coloredLogos[1]
 
   of "ubuntu":
-    result = ubuntuLogo
+    result = coloredLogos[2]
 
   of "debian":
-    result = debianLogo
+    result = coloredLogos[3]
 
   of "fedora":
-    result = fedoraLogo
+    result = coloredLogos[4]
 
   of "linuxmint":
-    result = mintLogo
+    result = coloredLogos[5]
 
   of "Zorin OS":
-    result = zorinLogo
+    result = coloredLogos[6]
 
   of "pop":
-    result = poposLogo
+    result = coloredLogos[7]
 
   of "manjaro":
-    result = manjaroLogo
+    result = coloredLogos[8]
 
   of "opensuse":
-    result = opensuseLogo
+    result = coloredLogos[9]
 
   of "slackware":
-    result = slackwareLogo
+    result = coloredLogos[10]
 
   of "centos":
-    result = centosLogo
+    result = coloredLogos[11]
 
   of "redhat":
-    result = redhatLogo
+    result = coloredLogos[12]
 
   of "gentoo":
-    result = gentooLogo
+    result = coloredLogos[13]
 
   else:
-    result = nitchLogo
+    result = coloredLogos[0]
