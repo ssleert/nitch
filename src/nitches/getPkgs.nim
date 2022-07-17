@@ -1,5 +1,4 @@
-import ../funcs/packages/getPacmanPkgs
-import ../funcs/packages/getFedoraPkgs
+import ../funcs/packages/[getPacmanPkgs, getRpmPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -13,13 +12,7 @@ proc getPkgs*(distroId: string): string =
     result = getPacmanPkgs()
 
   of "fedora":
-    result = getFedoraPkgs()
-
-  of "ubuntu":
-    result = ">3"
-
-  of "debian":
-    result = ">3"
+    result = getRpmPkgs()
 
   else:
     result = ">3"

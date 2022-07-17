@@ -1,7 +1,7 @@
-import std/[strutils, osproc]
+import std/osproc
 
-proc getFedoraPkgs*(): string =
+proc getRpmPkgs*(): string =
   let
-    count = osproc.execCmdEx("rpm -qa | wc -l")[0]
+    count: string = osproc.execCmdEx("rpm -qa | wc -l")[0]
 
-  result = count.replace("\n", "")
+  result = count[0 .. ^2]
