@@ -1,4 +1,4 @@
-import ../funcs/packages/[getPacmanPkgs, getRpmPkgs, getPortagePkgs, getVoidPkgs]
+import ../funcs/packages/[getPacmanPkgs, getRpmPkgs, getPortagePkgs, getVoidPkgs, getUbuntuPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -19,6 +19,9 @@ proc getPkgs*(distroId: string): string =
 
   of "void":
     result = getVoidPkgs()
+  
+  of "ubuntu":
+    result = getUbuntuPkgs()
 
   else:
     result = ">3"
