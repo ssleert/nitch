@@ -1,4 +1,4 @@
-import ../funcs/packages/[getPacmanPkgs, getRpmPkgs, getPortagePkgs]
+import ../funcs/packages/[getPacmanPkgs, getRpmPkgs, getPortagePkgs, getVoidPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -16,6 +16,9 @@ proc getPkgs*(distroId: string): string =
 
   of "gentoo":
     result = getPortagePkgs()
+
+  of "void":
+    result = getVoidPkgs()
 
   else:
     result = ">3"
