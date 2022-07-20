@@ -23,5 +23,8 @@ proc getPkgs*(distroId: string): string =
   of "ubuntu":
     result = getUbuntuPkgs()
 
+  of "pop":
+    result = getUbuntuPkgs()
+
   else:
     result = ">3"
