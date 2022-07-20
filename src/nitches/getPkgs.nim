@@ -11,6 +11,9 @@ proc getPkgs*(distroId: string): string =
   of "manjaro":
     result = getPacmanPkgs()
 
+  of "endeavouros":
+    result = getPacmanPkgs()
+
   of "fedora":
     result = getRpmPkgs()
 
