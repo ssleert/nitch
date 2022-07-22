@@ -9,58 +9,58 @@ import ../nitches/[getUser, getHostname,
 # the main function for drawing fetch
 proc drawInfo*() =
   let  # distro id (arch, manjaro, debian)
-    distroId: string = getDistroId()
+    distroId = getDistroId()
 
   let  # logo and it color
-    coloredLogo: tuple = getLogo(distroId)  # color + logo tuple
+    coloredLogo = getLogo(distroId)  # color + logo tuple
 
   const  # icons before cotegores
-    userIcon: string   = " "  # recomended: " " or "|>"
-    hnameIcon: string  = " "  # recomended: " " or "|>"
-    distroIcon: string = " "  # recomended: " " or "|>"
-    kernelIcon: string = " "  # recomended: " " or "|>"
-    uptimeIcon: string = " "  # recomended: " " or "|>"
-    shellIcon: string  = " "  # recomended: " " or "|>"
-    pkgsIcon: string   = " "  # recomended: " " or "|>"
-    ramIcon: string    = " "  # recomended: " " or "|>"
-    colorsIcon: string = " "  # recomended: " " or "->"
+    userIcon   = " "  # recomended: " " or "|>"
+    hnameIcon  = " "  # recomended: " " or "|>"
+    distroIcon = " "  # recomended: " " or "|>"
+    kernelIcon = " "  # recomended: " " or "|>"
+    uptimeIcon = " "  # recomended: " " or "|>"
+    shellIcon  = " "  # recomended: " " or "|>"
+    pkgsIcon   = " "  # recomended: " " or "|>"
+    ramIcon    = " "  # recomended: " " or "|>"
+    colorsIcon = " "  # recomended: " " or "->"
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 
-    dotIcon: string = ""  # recomended: "" or "■"
+    dotIcon = ""  # recomended: "" or "■"
     # icon for demonstrate colors
 
   const  # categories
-    userCat: string   = " user   │ "  # recomended: " user   │ "
-    hnameCat: string  = " hname  │ "  # recomended: " hname  │ "
-    distroCat: string = " distro │ "  # recomended: " distro │ "
-    kernelCat: string = " kernel │ "  # recomended: " kernel │ "-
-    uptimeCat: string = " uptime │ "  # recomended: " uptime │ "
-    shellCat: string  = " shell  │ "  # recomended: " shell  │ "
-    pkgsCat: string   = " pkgs   │ "  # recomended: " pkgs   │ "
-    ramCat: string    = " memory │ "  # recomended: " memory │ "
-    colorsCat: string = " colors │ "  # recomended: " colors │ "
+    userCat   = " user   │ "  # recomended: " user   │ "
+    hnameCat  = " hname  │ "  # recomended: " hname  │ "
+    distroCat = " distro │ "  # recomended: " distro │ "
+    kernelCat = " kernel │ "  # recomended: " kernel │ "-
+    uptimeCat = " uptime │ "  # recomended: " uptime │ "
+    shellCat  = " shell  │ "  # recomended: " shell  │ "
+    pkgsCat   = " pkgs   │ "  # recomended: " pkgs   │ "
+    ramCat    = " memory │ "  # recomended: " memory │ "
+    colorsCat = " colors │ "  # recomended: " colors │ "
 
   let  # all info about system
-    userInfo: string     = getUser()          # get user through $USER env variable
-    hostnameInfo: string = getHostname()      # get Hostname hostname through /etc/hostname
-    distroInfo: string   = getDistro()        # get distro through /etc/os-release
-    kernelInfo: string   = getKernel()        # get kernel through /proc/version
-    uptimeInfo: string   = getUptime()        # get Uptime through /proc/uptime file
-    shellInfo: string    = getShell()         # get shell through $SHELL env variable
-    pkgsInfo: string     = getPkgs(distroId)  # get amount of packages in distro
-    ramInfo: string      = getRam()           # get ram through /proc/meminfo
+    userInfo     = getUser()          # get user through $USER env variable
+    hostnameInfo = getHostname()      # get Hostname hostname through /etc/hostname
+    distroInfo   = getDistro()        # get distro through /etc/os-release
+    kernelInfo   = getKernel()        # get kernel through /proc/version
+    uptimeInfo   = getUptime()        # get Uptime through /proc/uptime file
+    shellInfo    = getShell()         # get shell through $SHELL env variable
+    pkgsInfo     = getPkgs(distroId)  # get amount of packages in distro
+    ramInfo      = getRam()           # get ram through /proc/meminfo
 
   const  # aliases for colors
-    color1: ForegroundColor = fgRed
-    color2: ForegroundColor = fgYellow
-    color3: ForegroundColor = fgGreen
-    color4: ForegroundColor = fgCyan
-    color5: ForegroundColor = fgBlue
-    color6: ForegroundColor = fgMagenta
-    color7: ForegroundColor = fgWhite
-    color8: ForegroundColor = fgBlack
-    color0: ForegroundColor = fgDefault
+    color1 = fgRed
+    color2 = fgYellow
+    color3 = fgGreen
+    color4 = fgCyan
+    color5 = fgBlue
+    color6 = fgMagenta
+    color7 = fgWhite
+    color8 = fgBlack
+    color0 = fgDefault
 
   # colored out
   stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0,

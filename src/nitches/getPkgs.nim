@@ -1,4 +1,6 @@
-import ../funcs/packages/[getPacmanPkgs, getRpmPkgs, getPortagePkgs, getVoidPkgs, getUbuntuPkgs]
+import ../funcs/packages/[getPacmanPkgs, getRpmPkgs,
+                          getPortagePkgs, getXbpsPkgs,
+                          getDpkgPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -14,6 +16,9 @@ proc getPkgs*(distroId: string): string =
   of "endeavouros":
     result = getPacmanPkgs()
 
+  of "garuda":
+    result = getPacmanPkgs()
+
   of "fedora":
     result = getRpmPkgs()
 
@@ -21,13 +26,16 @@ proc getPkgs*(distroId: string): string =
     result = getPortagePkgs()
 
   of "void":
-    result = getVoidPkgs()
-  
+    result = getXbpsPkgs()
+
   of "ubuntu":
-    result = getUbuntuPkgs()
+    result = getDpkgPkgs()
+
+  of "debian":
+    result = getDpkgPkgs()
 
   of "pop":
-    result = getUbuntuPkgs()
+    result = getDpkgPkgs()
 
   else:
     result = ">3"

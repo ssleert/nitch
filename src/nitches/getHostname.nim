@@ -1,7 +1,7 @@
 proc getHostname*(): string =
   let
-    hostNameFile: File = open("/etc/hostname")
-    hostName: string = readLine(hostNameFile)
+    hostNameFile = open("/etc/hostname")
+    hostName = readLine(hostNameFile)
 
   hostNameFile.close()
 
