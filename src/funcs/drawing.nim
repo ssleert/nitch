@@ -7,7 +7,7 @@ import ../nitches/[getUser, getHostname,
                    getPkgs, getRam, getLogo]  # import nitches to get info about user system
 
 # the main function for drawing fetch
-proc drawInfo*() =
+proc drawInfo*(asciiArt: bool) =
   let  # distro id (arch, manjaro, debian)
     distroId = getDistroId()
 
@@ -63,7 +63,12 @@ proc drawInfo*() =
     color0 = fgDefault
 
   # colored out
-  stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0,
+  if asciiArt:
+    stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0)
+  else:
+    discard
+
+  stdout.styledWrite("\n", styleBright,
                      "  ╭───────────╮\n",
                      "  │ ", color1, userIcon, color0, userCat, color1, userInfo, color0, "\n",
                      "  │ ", color2, hnameIcon, color0, hnameCat, color2, hostnameInfo, color0, "\n",

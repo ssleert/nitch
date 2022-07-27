@@ -12,13 +12,17 @@ case arg:
 of 0:
   arg0()  # cal arg0 func from perform
 
-# if -h --help flags
+# if -a --no-ascii flags
 of 1:
-  arg1()  # cal arg1 func from perform
+  arg1() # cal arg1 func from perform
+
+# if -h --help flags
+of 2:
+  arg2()  # cal arg1 func from perform
 
 # if -v --version flags
-of 2:
-  arg2()  # cal arg2 func from perform
+of 3:
+  arg3()  # cal arg2 func from perform
 
 # nim xdd
 else:

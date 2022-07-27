@@ -2,7 +2,8 @@ func argParser*(args: seq[string], argCount: int): int =
 
   # list of constant args
   const
-    argsList: array[4, string] = [
+    argsList: array[6, string] = [
+    "-a", "--no-ascii",
     "-h", "--help",
     "-v", "--version"
     ]
@@ -15,10 +16,14 @@ func argParser*(args: seq[string], argCount: int): int =
     # case first argument
     case args[0]:
 
+    # if -a --no-ascii flags
+    of argsList[0..1]:
+      result = 1 # return 1
+
     # if -h --help flags
-    of argsList[0 .. 1]:
-      result = 1  # return 1
+    of argsList[2..3]:
+      result = 2  # return 2
 
     # if -v --version flags
-    of argsList[2 .. 3]:
-      result = 2  # return 2
+    of argsList[4..5]:
+      result = 3  # return 2
