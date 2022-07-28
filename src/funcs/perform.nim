@@ -1,5 +1,6 @@
-import ./drawing
-import ../assets/assets
+import
+  ./drawing,
+  ../assets/assets
 
 # if if no flag
 proc arg0*() =
@@ -11,8 +12,8 @@ proc arg1*() =
 
 # if -h --help flags
 proc arg2*() =
-  stdout.write(helpMsg)  # write to stdout helpMsg from nitch/assets/assets file
+  stdout.write(helpMsg) # write to stdout helpMsg from nitch/assets/assets file
 
 # if -v --version flags
 proc arg3*() =
-  stdout.write(programVersion)  # write to stdout programVersion from nitch/assets/assets file
+  stdout.write(programVersion) # write to stdout programVersion from nitch/assets/assets file

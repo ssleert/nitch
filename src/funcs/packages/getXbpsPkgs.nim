@@ -1,4 +1,5 @@
-import std/[strutils, osproc]
+import
+  std/[strutils, osproc]
 
 proc getXbpsPkgs*(): string =
   let

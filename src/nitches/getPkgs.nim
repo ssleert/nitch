@@ -1,6 +1,7 @@
-import ../funcs/packages/[getPacmanPkgs, getRpmPkgs,
-                          getPortagePkgs, getXbpsPkgs,
-                          getDpkgPkgs]
+import
+  ../funcs/packages/[getPacmanPkgs, getRpmPkgs,
+                     getPortagePkgs, getXbpsPkgs,
+                     getDpkgPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:

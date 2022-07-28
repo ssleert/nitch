@@ -1,4 +1,4 @@
-func argParser*(args: seq[string], argCount: int): int =
+func argParser*(args: seq[string], argCount: int): uint8 =
 
   # list of constant args
   const
@@ -10,7 +10,7 @@ func argParser*(args: seq[string], argCount: int): int =
 
   # if no flags
   if argCount == 0:
-    result = 0  # return 0
+    result = 0 # return 0
 
   else:
     # case first argument
@@ -22,8 +22,8 @@ func argParser*(args: seq[string], argCount: int): int =
 
     # if -h --help flags
     of argsList[2..3]:
-      result = 2  # return 2
+      result = 2 # return 2
 
     # if -v --version flags
     of argsList[4..5]:
-      result = 3  # return 2
+      result = 3 # return 2

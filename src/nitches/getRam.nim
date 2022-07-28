@@ -1,15 +1,16 @@
-import std/strutils
+import
+  std/strutils
 
 proc getRam*(): string =
   let
-    fileSeq: seq[string] = readLines("/proc/meminfo", 3)
+    fileSeq: seq[string] = "/proc/meminfo".readLines(3)
 
   let
-    memTotalSeq: seq[string] = fileSeq[0].split(" ")
-    memAvailableSeq: seq[string] = fileSeq[2].split(" ")
+    memTotalString = fileSeq[0].split(" ")[^2]
+    memAvailableString = fileSeq[2].split(" ")[^2]
 
-    memTotalInt = parseInt(memTotalSeq[^2]) div 1024
-    memAvailableInt = parseInt(memAvailableSeq[^2]) div 1024
+    memTotalInt = memTotalString.parseUInt div 1024
+    memAvailableInt = memAvailableString.parseUInt div 1024
 
     memUsedInt = memTotalInt - memAvailableInt
 

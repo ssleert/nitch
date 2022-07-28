@@ -10,3 +10,4 @@ asd_ref_ref_ref_ref[] = "Hello, World!"
 echo asd_ref_ref_ref_ref.repr
 echo ""
 echo asd.repr
+

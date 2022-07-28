@@ -1,8 +1,8 @@
-import std/[os, sequtils]
+import
+  std/[os, sequtils]
 
 proc getPacmanPkgs*(): string =
   let
-    packagesDir = "/var/lib/pacman/local"
-    filesInPath: seq[tuple] = toSeq(walkDir(packagesDir, relative = true))
+    filesInPath: seq[tuple] = "/var/lib/pacman/local".walkDir(relative = true).toSeq
 
   result = $(filesInPath.len - 1)

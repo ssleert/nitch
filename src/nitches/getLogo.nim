@@ -1,5 +1,6 @@
-import std/terminal
-import ../assets/logos
+import
+  std/terminal,
+  ../assets/logos
 
 func getLogo*(distroId: string): tuple =
   const

@@ -1,10 +1,11 @@
-import std/terminal       # import standard terminal lib
-import getDistroId        # import to get distro id through /etc/os-release
-#import ../assets/logos   # uncomment if you use your own logo
-import ../nitches/[getUser, getHostname,
-                   getDistro, getKernel,
-                   getUptime, getShell,
-                   getPkgs, getRam, getLogo]  # import nitches to get info about user system
+import
+  std/terminal,     # import standard terminal lib
+  getDistroId,      # import to get distro id through /etc/os-release
+  ../assets/logos,  # uncomment if you use your own logo
+  ../nitches/[getUser, getHostname,
+                  getDistro, getKernel,
+                  getUptime, getShell,
+                  getPkgs, getRam, getLogo]  # import nitches to get info about user system
 
 # the main function for drawing fetch
 proc drawInfo*(asciiArt: bool) =
@@ -13,6 +14,7 @@ proc drawInfo*(asciiArt: bool) =
 
   let  # logo and it color
     coloredLogo = getLogo(distroId)  # color + logo tuple
+    # (fgRed, nitchLogo)
 
   const  # icons before cotegores
     userIcon   = " "  # recomended: " " or "|>"
@@ -62,12 +64,13 @@ proc drawInfo*(asciiArt: bool) =
     color8 = fgBlack
     color0 = fgDefault
 
-  # colored out
-  if asciiArt:
-    stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0)
-  else:
+  # ascii art
+  if not asciiArt:
     discard
+  else:
+    stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0)
 
+  # colored out
   stdout.styledWrite("\n", styleBright,
                      "  ╭───────────╮\n",
                      "  │ ", color1, userIcon, color0, userCat, color1, userInfo, color0, "\n",
