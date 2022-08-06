@@ -1,5 +1,6 @@
 import
   std/terminal,     # import standard terminal lib
+  std/strutils,
   getDistroId,      # import to get distro id through /etc/os-release
   ../assets/logos,  # uncomment if you use your own logo
   ../nitches/[getUser, getHostname,
@@ -71,17 +72,16 @@ proc drawInfo*(asciiArt: bool) =
     stdout.styledWrite(styleBright, coloredLogo[0], coloredLogo[1], color0)
 
   # colored out
-  stdout.styledWrite("\n", styleBright,
-                     "  ╭───────────╮\n",
-                     "  │ ", color1, userIcon, color0, userCat, color1, userInfo, color0, "\n",
-                     "  │ ", color2, hnameIcon, color0, hnameCat, color2, hostnameInfo, color0, "\n",
-                     "  │ ", color3, distroIcon, color0, distroCat, color3, distroInfo, color0, "\n",
-                     "  │ ", color4, kernelIcon, color0, kernelCat, color4, kernelInfo, color0, "\n",
-                     "  │ ", color5, uptimeIcon, color0, uptimeCat, color5, uptimeInfo, color0, "\n",
-                     "  │ ", color6, shellIcon, color0, shellCat, color6, shellInfo, color0, "\n",
-                     "  │ ", color1, pkgsIcon, color0, pkgsCat, color1, pkgsInfo, color0, "\n",
-                     "  │ ", color2, ramIcon, color0, ramCat, fgYellow, ramInfo, color0, "\n",
-                     "  ├───────────┤\n",
-                     "  │ ", color7, colorsIcon, color0, colorsCat, color7, dotIcon, " ", color1, dotIcon, " ", color2, dotIcon, " ", color3, dotIcon, " ", color4, dotIcon, " ", color5, dotIcon, " ", color6, dotIcon, " ", color8, dotIcon, color0, "\n",
-                     "  ╰───────────╯\n\n"
-  )
+    stdout.styledWrite("\n", styleBright, "  ╭───────────╮\n")
+    stdout.styledWrite("  │ ", color2, userIcon, color0, userCat, color1, userInfo, color0, "\n",)
+    if not isEmptyOrWhitespace(hostnameInfo):
+      stdout.styledWrite("  │ ", color2, hnameIcon, color0, hnameCat, color2, hostnameInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color3, distroIcon, color0, distroCat, color3, distroInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color4, kernelIcon, color0, kernelCat, color4, kernelInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color5, uptimeIcon, color0, uptimeCat, color5, uptimeInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color6, shellIcon, color0, shellCat, color6, shellInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color1, pkgsIcon, color0, pkgsCat, color1, pkgsInfo, color0, "\n")
+    stdout.styledWrite("  │ ", color2, ramIcon, color0, ramCat, fgYellow, ramInfo, color0, "\n")
+    stdout.styledWrite("  ├───────────┤\n")
+    stdout.styledWrite("  │ ", color7, colorsIcon, color0, colorsCat, color7, dotIcon, " ", color1, dotIcon, " ", color2, dotIcon, " ", color3, dotIcon, " ", color4, dotIcon, " ", color5, dotIcon, " ", color6, dotIcon, " ", color8, dotIcon, color0, "\n")
+    stdout.styledWrite("  ╰───────────╯\n\n")
