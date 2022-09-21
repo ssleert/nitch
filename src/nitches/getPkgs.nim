@@ -1,7 +1,7 @@
 import
   ../funcs/packages/[getPacmanPkgs, getRpmPkgs,
                      getPortagePkgs, getXbpsPkgs,
-                     getDpkgPkgs]
+                     getDpkgPkgs, getNixPkgs]
 
 proc getPkgs*(distroId: string): string =
   case distroId:
@@ -37,6 +37,9 @@ proc getPkgs*(distroId: string): string =
 
   of "pop":
     result = getDpkgPkgs()
+  
+  of "nixos":
+    result = getNixPkgs()
 
   else:
     result = ">3"
