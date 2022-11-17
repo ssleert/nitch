@@ -38,5 +38,8 @@ proc getPkgs*(distroId: string): string =
   of "pop":
     result = getDpkgPkgs()
 
+  of "raspbian":
+    result = getDpkgPkgs()
+
   else:
     result = ">3"
