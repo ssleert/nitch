@@ -51,8 +51,14 @@ proc drawInfo*(asciiArt: bool) =
     kernelInfo   = getKernel()        # get kernel through /proc/version
     uptimeInfo   = getUptime()        # get Uptime through /proc/uptime file
     shellInfo    = getShell()         # get shell through $SHELL env variable
-    pkgsInfo     = getPkgs(distroId)  # get amount of packages in distro
+    flatpakInfo  = getPkgs("flatpak") # get amount of packages in flatpak
     ramInfo      = getRam()           # get ram through /proc/meminfo
+
+  var 
+    pkgsInfo     = getPkgs(distroId)  # get amount of packages in distro
+  
+  if flatpakInfo != "0":
+    pkgsInfo = pkgsInfo & " (flatpak " & flatpakInfo & ")"
 
   const  # aliases for colors
     color1 = fgRed
