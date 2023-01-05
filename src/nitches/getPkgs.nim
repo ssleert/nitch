@@ -7,6 +7,9 @@ proc getPkgs*(distroId: string): string =
   case distroId:
   of "arch":
     result = getPacmanPkgs()
+  
+  of "artix":
+    result = getPacmanPkgs()
 
   of "archcraft":
     result = getPacmanPkgs()
