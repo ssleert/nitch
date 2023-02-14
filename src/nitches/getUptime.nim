@@ -8,9 +8,13 @@ proc getUptime*(): string =
 
     uptimeHours = uptimeUint div 3600
     uptimeMinutes = uptimeUint mod 3600 div 60
+    uptimeDays = uptimeHours div 24
 
-  if uptimeHours == 0:
+  if uptimeDays == 0:
+    result = $(uptimeHours) & "h " & $(uptimeMinutes) & "m"
+  
+  elif uptimeHours == 0:
     result = $(uptimeMinutes) & "m"
 
   else:
-    result = $(uptimeHours) & "h " & $(uptimeMinutes) & "m"
+    result = $(uptimeDays) & "d " & $(uptimeHours) & "h " & $(uptimeMinutes) & "m"
