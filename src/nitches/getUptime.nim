@@ -6,9 +6,9 @@ proc getUptime*(): string =
     uptimeString = "/proc/uptime".open.readLine.split(".")[0]
     uptimeUint = uptimeString.parseUInt
 
-    uptimeHours = uptimeUint div 3600
+    uptimeHours = uptimeUint div 3600 mod 24
     uptimeMinutes = uptimeUint mod 3600 div 60
-    uptimeDays = uptimeHours div 24
+    uptimeDays = uptimeUint div 3600 div 24 
 
   if uptimeDays == 0:
     result = $(uptimeHours) & "h " & $(uptimeMinutes) & "m"
