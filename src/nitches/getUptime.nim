@@ -13,7 +13,7 @@ proc getUptime*(): string =
   if uptimeDays == 0:
     result = $(uptimeHours) & "h " & $(uptimeMinutes) & "m"
   
-  elif uptimeHours == 0:
+  elif uptimeHours == 0 and uptimeDays == 0:
     result = $(uptimeMinutes) & "m"
 
   else:
