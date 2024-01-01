@@ -51,6 +51,9 @@ func getLogo*(distroId: string): tuple =
   of "opensuse":
     result = coloredLogos[9]
 
+  of "opensuse-tumbleweed":
+    result = coloredLogos[9]
+
   of "slackware":
     result = coloredLogos[10]
 

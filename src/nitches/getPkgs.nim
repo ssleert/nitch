@@ -26,6 +26,9 @@ proc getPkgs*(distroId: string): string =
   of "fedora":
     result = getRpmPkgs()
 
+  of "opensuse-tumbleweed":
+    result = getRpmPkgs()
+
   of "gentoo":
     result = getPortagePkgs()
 
